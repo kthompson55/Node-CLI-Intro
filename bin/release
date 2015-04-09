@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+console.log("bumping version");
+console.log("GitHub Release API");
+console.log("npm publish");

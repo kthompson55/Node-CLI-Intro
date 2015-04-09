@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/kthompson55/Node-CLI-Intro/issues"
   },
-  "homepage": "https://github.com/kthompson55/Node-CLI-Intro"
+  "homepage": "https://github.com/kthompson55/Node-CLI-Intro",
+  "dependencies": {
+    "child-process-promise": "^1.0.2"
+  }
 }
