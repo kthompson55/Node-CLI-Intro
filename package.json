@@ -1,0 +1,24 @@
+{
+  "name": "Node-CLI-Intro",
+  "version": "0.0.1",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "Hello world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kthompson55/Node-CLI-Intro.git"
+  },
+  "keywords": [
+    "test",
+    "javascript",
+    "json"
+  ],
+  "author": "Karl Thompson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kthompson55/Node-CLI-Intro/issues"
+  },
+  "homepage": "https://github.com/kthompson55/Node-CLI-Intro"
+}
