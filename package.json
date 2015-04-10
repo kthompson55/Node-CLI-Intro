@@ -4,7 +4,7 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "test": "Hello world",
+    "test": "mocha",
     "build": "babel src --out-dir lib"
   },
   "repository": {
@@ -24,5 +24,11 @@
   "homepage": "https://github.com/kthompson55/Node-CLI-Intro",
   "dependencies": {
     "child-process-promise": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel": "^5.0.12",
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4",
+    "semver": "^4.3.3"
   }
 }
