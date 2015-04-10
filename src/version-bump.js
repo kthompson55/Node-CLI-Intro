@@ -4,11 +4,13 @@ class VersionBumper
 {
 	versionBump(curVersion,updateType)
 	{
-		
-		if(!semver.isValid(curVersion)){
+		if(semver.valid(curVersion) === null)
+		{
 		   throw "Invalid version number";
-		   }
-		return semver.increment(updateType,curVersion);
+		}
+		var increased = semver.inc(curVersion.toLowerCase,updateType);
+		console.log(increased);
+		return semver.inc(curVersion,updateType);
 	}
 }
 
