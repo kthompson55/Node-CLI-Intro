@@ -47,15 +47,36 @@ describe("version bumper", function() {
 			assert(patchIncrementTest,increasedVersionTest);
 		})
 		it('pre',function(){
-			newVersion = Semver.valid(test.versionBump(currentVersion,"pre","alpha"));
-			let decreasedVersionTest = Semver.lt(newVersion,currentVersion);
-			assert(decreasedVersionTest);
+			try{
+				newVersion = Semver.valid(test.versionBump(currentVersion,"pre","alpha"));
+				assert(fail);
+			}catch(err){
+				console.log(err);
+				assert(err === "Cannot go back to previous preID");
+			}
 		})
 	})
 	describe('pre-version bumping with previous predID',function(){
 		it('same id',function(){
+			let idVersion = "1.0.0-alpha.0";
+			newVersion = Semver.valid(test.versionBump(idVersion,"pre","alpha"));
+			let increasedVersionTest = Semver.gt(newVersion,idVersion);
+			assert(increasedVersionTest);
 		})
-		xit('different id',function(){
+		it('different ids, old id is earlier',function(){
+			let idVersion = "1.0.0-alpha.0";
+			newVersion = Semver.valid(test.versionBump(idVersion,"pre","beta"));
+			let increasedVersionTest = Semver.gt(newVersion,idVersion);
+			assert(increasedVersionTest);
+		})
+		it('different ids, old id is later',function(){
+			try{
+				let idVersion = "1.0.0-beta.0";
+				newVersion = Semver.valid(test.versionBump(idVersion,"pre","alpha"));
+				assert(fail);
+			}catch(err){
+				assert(err === "Cannot go back to previous preID");
+			}
 		})
 	})
 	describe('exception will be thrown', function(){

@@ -17,7 +17,12 @@ class VersionBumper
 		{
 			if(Semver.valid(curVersion) !== null)
 			{
-				return Semver.inc(curVersion,updateType.toLowerCase(),preID);
+				let potentialNewVersion = Semver.inc(curVersion,updateType.toLowerCase(),preID);
+				if(Semver.gt(potentialNewVersion,curVersion))
+				{
+					return potentialNewVersion;	
+				}
+				else throw "Cannot go back to previous preID";
 			}
 			else throw "Invalid version number";
 		}
