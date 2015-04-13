@@ -1,16 +1,14 @@
-import semver from "semver";
+import Semver from "Semver";
 
 class VersionBumper
 {
 	versionBump(curVersion,updateType)
 	{
-		if(semver.valid(curVersion) === null)
+		if(Semver.valid(curVersion) != null)
 		{
-		   throw "Invalid version number";
+			return Semver.inc(Semver.valid(curVersion),updateType.toLowerCase());
 		}
-		var increased = semver.inc(curVersion.toLowerCase,updateType);
-		console.log(increased);
-		return semver.inc(curVersion,updateType);
+		else throw "Invalid version";
 	}
 }
 
