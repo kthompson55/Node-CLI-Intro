@@ -10,30 +10,52 @@ describe("version bumper", function() {
 	describe('version should be higher\n\t', function(){
 		it('major release',function(){
 			newVersion = Semver.valid(test.versionBump(currentVersion,"major"));
-			let increasedVersion = Semver.satisfies(newVersion, '>' + currentVersion);
+			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
 			let majorIncrementTest = compareVersionType("major",currentVersion,newVersion);
-			
-			assert(increasedVersion && majorIncrementTest);
+			assert(increasedVersionTest && majorIncrementTest);
 		})
 		it('minor release',function(){
 			newVersion = Semver.valid(test.versionBump(currentVersion,"minor"));
-			let increasedVersion = Semver.satisfies(newVersion, '>' + currentVersion);
+			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
 			let minorIncremementTest = compareVersionType("minor",currentVersion,newVersion);
-			assert(increasedVersion && minorIncremementTest);
+			assert(increasedVersionTest && minorIncremementTest);
 		})
 		it('patch release',function(){
 			newVersion = Semver.valid(test.versionBump(currentVersion,"patch"));
-			let increasedVersion = Semver.satisfies(newVersion, '>' + currentVersion);
+			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
 			let patchIncrementTest = compareVersionType("patch",currentVersion,newVersion);
-			assert(increasedVersion && patchIncrementTest);
+			assert(increasedVersionTest && patchIncrementTest);
 		})
 	})
-	describe('pre version bumping',function(){
-		xit('pre-major',function(){
+	describe('pre-version bumping with no previous preID',function(){
+		it('pre-major',function(){
+			newVersion = Semver.valid(test.versionBump(currentVersion,"premajor","alpha"));
+			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
+			let majorIncrementTest = compareVersionType("major",currentVersion,newVersion);
+			assert(majorIncrementTest && increasedVersionTest);
 		})
-		xit('pre-minor',function(){
+		it('pre-minor',function(){
+			newVersion = Semver.valid(test.versionBump(currentVersion,"preminor","alpha"));
+			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
+			let minorIncrementTest = compareVersionType("minor",currentVersion,newVersion);
+			assert(minorIncrementTest && increasedVersionTest);
 		})
-		xit('pre-patch',function(){
+		it('pre-patch',function(){
+			newVersion = Semver.valid(test.versionBump(currentVersion,"prepatch","alpha"));
+			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
+			let patchIncrementTest = compareVersionType("patch",currentVersion,newVersion);
+			assert(patchIncrementTest,increasedVersionTest);
+		})
+		it('pre',function(){
+			newVersion = Semver.valid(test.versionBump(currentVersion,"pre","alpha"));
+			let decreasedVersionTest = Semver.lt(newVersion,currentVersion);
+			assert(decreasedVersionTest);
+		})
+	})
+	describe('pre-version bumping with previous predID',function(){
+		it('same id',function(){
+		})
+		xit('different id',function(){
 		})
 	})
 	describe('exception will be thrown', function(){

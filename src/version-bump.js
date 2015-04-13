@@ -6,15 +6,18 @@ class VersionBumper
 		return type === "major"
 		|| type === "minor"
 		|| type === "patch"
-		|| type === "pre";
+		|| type === "pre"
+		|| type === "premajor"
+		|| type === "preminor"
+		|| type === "prepatch";
 	}
 	
-	versionBump(curVersion,updateType){
+	versionBump(curVersion,updateType,preID){
 		if(this.verifyValidType(updateType))
 		{
-			if(Semver.valid(curVersion) != null)
+			if(Semver.valid(curVersion) !== null)
 			{
-				return Semver.inc(Semver.valid(curVersion),updateType.toLowerCase());
+				return Semver.inc(curVersion,updateType.toLowerCase(),preID);
 			}
 			else throw "Invalid version number";
 		}
