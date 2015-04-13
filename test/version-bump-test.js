@@ -1,4 +1,4 @@
-import VersionBumper from "../lib/version-bump.js";
+import VersionBumper from "../src/version-bump.js";
 import Semver from "Semver";
 
 let test = new VersionBumper();
@@ -35,19 +35,24 @@ describe("version bumper", function() {
 		})
 		xit('pre-patch',function(){
 		})
-	}
+	})
 	describe('exception will be thrown', function(){
 		it('invalid current version', function(){
 			try{
 				let brokenVersion = 'a.b.c';
 				let result = test.versionBump(brokenVersion,"major");
-				assert(result === null);
+				assert(false);
 			}catch(err){
-				// passed test
+				assert(err === "Invalid version number");
 			}
 		})
-		xit('invalid update type', function(){
-			
+		it('invalid update type', function(){
+			try{
+				let result = test.versionBump(currentVersion,"invalid");
+				assert(false);
+			}catch(err){
+				assert(err === "Invalid update type");
+			}
 		})
 	})
 })
@@ -68,7 +73,7 @@ function compareVersionType(type, oldVersion, newVersion)
 	}
 	else if(type.toLowerCase() === ("pre"))
 	{
-
+		return Semver.valid(newVersion) > Semver.valid(oldVersion);
 	}
 	return false;
 }
