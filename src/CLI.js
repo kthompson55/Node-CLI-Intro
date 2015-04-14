@@ -5,7 +5,8 @@ import Package from "../package.json";
 let bumper = new VersionBumper();
 
 let yarguments = Yargs
-	.usage('Usage: bin/release <version-type> --preid <id>')
+	.usage('Usage: -b [string] -p [string]')
+	.example('Example: -b major -p tag')
 	.help('Version Types are:\nmajor\tminor\tpatch\n\t\tpremajor\tpreminor\tprepatch\n\nPre-ids shoudld be one word. Any pre-id that is multiple words will be concatentated into one (e.g. "this that" becomes "thisthat"\n')
 	.alias('h','help')
 	.command('version','Get current version')
