@@ -1,6 +1,8 @@
 import VersionBumper from "./version-bump.js";
 import Yargs from "Yargs";
 import Package from "../package.json";
+import Promise from "fs-promise";
+import Path from 'path';
 
 let bumper = new VersionBumper();
 
@@ -27,7 +29,6 @@ else if(yarguments.argv.version)
 }
 else
 {
-	console.log("Previous version: " + Package.version);
 	let preid;
 	if(yarguments.argv.preid)
 	{
@@ -38,8 +39,15 @@ else
 	let updateType = yarguments.argv.bump;
 	try{
 		let updateVersion = bumper.versionBump(Package.version,updateType,preid);
-		console.log("Current version: " + updateVersion);
+		Package.version = updateVersion;
+		Promise.writeFile(file('../package.json'),JSON.stringify(Package));
 	}catch(err){
 		console.log("The following error occurred: " + err);
 	}
+}
+
+function file(){
+  	var args = [].slice.call(arguments);
+	args.unshift('bin');
+  	return Path.join.apply(Path, args);
 }
