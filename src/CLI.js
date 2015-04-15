@@ -10,6 +10,9 @@ import Path from 'path';
 // Git pushing
 import ChildPromise from 'child-process-promise';
 
+// Git API
+import Curl from 'curl';
+
 let bumper = new VersionBumper();
 
 let yarguments = Yargs
@@ -37,11 +40,8 @@ else
 {
 	if(updateJson())
 	{
-		if(updateGit())
-		{
-			console.log("API Stuff");
-			gitAPI();
-		}
+		updateGit();
+		gitAPI();
 	}	
 }
 
@@ -84,9 +84,6 @@ function updateGit()
 				promise('git tag v' + Package.version)
 				.then(
 					promise('git push --tags')
-					.then(function(){
-						return true;
-					})
 				)
 			)
 		);
@@ -94,10 +91,20 @@ function updateGit()
 
 function gitAPI()
 {
-	console.log("API Stuff");
-	let promise = ChildPromise.exec;
-	promise('git GET /repos/kthompson55/Node-CLI-Intro/releases/tag/v.1.0.0')
-	.then('echo get received')
-	.fail(function(){console.log('GET repo details failed'); return false;});
+	let gitValues = {
+		tag_name: 'v' + Package.version,
+		name: 'v' + Package.version,
+		owner: Package.owner,
+		repo: Package.repository.url
+	};
+	
+	
 }
 //_END GIT
+//START NPM_
+function publishToNPM()
+{
+	let promise = ChildPromise.exec;
+	promise('echo npm publish');
+}
+//_NPM

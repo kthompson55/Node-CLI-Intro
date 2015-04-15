@@ -1,0 +1,234 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'node-curl' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 warn package.json curl@0.1.4 No repository field.
+5 silly cache add args [ 'node-curl', null ]
+6 verbose cache add spec node-curl
+7 silly cache add parsed spec { raw: 'node-curl',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'node-curl',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed node-curl@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'node-curl', range: '*', hasData: false }
+12 silly mapToRegistry name node-curl
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/node-curl
+16 verbose addNameRange registry:https://registry.npmjs.org/node-curl not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/node-curl
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 3:13:53 PM
+20 verbose request id 69acfabb6b235809
+21 verbose etag "1TPK66SBCORX73S2J40XN4BDL"
+22 http request GET https://registry.npmjs.org/node-curl
+23 http 304 https://registry.npmjs.org/node-curl
+24 silly get cb [ 304,
+24 silly get   { date: 'Wed, 15 Apr 2015 21:13:53 GMT',
+24 silly get     server: 'Apache',
+24 silly get     via: '1.1 varnish',
+24 silly get     'last-modified': 'Wed, 15 Apr 2015 21:13:53 GMT',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     etag: '"1TPK66SBCORX73S2J40XN4BDL"',
+24 silly get     age: '0',
+24 silly get     'x-served-by': 'cache-dfw1823-DFW',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1429132433.520510,VS0,VE124',
+24 silly get     vary: 'Accept',
+24 silly get     'content-length': '0',
+24 silly get     'keep-alive': 'timeout=10, max=50',
+24 silly get     connection: 'Keep-Alive' } ]
+25 verbose etag https://registry.npmjs.org/node-curl from cache
+26 verbose get saving node-curl to C:\Users\karthom\AppData\Roaming\npm-cache\registry.npmjs.org\node-curl\.cache.json
+27 silly addNameRange number 2 { name: 'node-curl', range: '*', hasData: true }
+28 silly addNameRange versions [ 'node-curl',
+28 silly addNameRange   [ '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.1.2',
+28 silly addNameRange     '0.1.3',
+28 silly addNameRange     '0.1.4',
+28 silly addNameRange     '0.1.5',
+28 silly addNameRange     '0.1.6',
+28 silly addNameRange     '0.1.7',
+28 silly addNameRange     '0.1.8',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.2.2',
+28 silly addNameRange     '0.2.3',
+28 silly addNameRange     '0.3.0',
+28 silly addNameRange     '0.3.1',
+28 silly addNameRange     '0.3.3' ] ]
+29 verbose addNamed node-curl@0.3.3
+30 silly addNamed semver.valid 0.3.3
+31 silly addNamed semver.validRange 0.3.3
+32 silly cache afterAdd node-curl@0.3.3
+33 verbose afterAdd C:\Users\karthom\AppData\Roaming\npm-cache\node-curl\0.3.3\package\package.json not in flight; writing
+34 verbose afterAdd C:\Users\karthom\AppData\Roaming\npm-cache\node-curl\0.3.3\package\package.json written
+35 silly install resolved [ { name: 'node-curl',
+35 silly install resolved     version: '0.3.3',
+35 silly install resolved     author: { name: 'Jiang Miao', email: 'jiangfriend@gmail.com' },
+35 silly install resolved     description: 'node wrapper for multi curl, fully implemented.',
+35 silly install resolved     keywords: [ 'node-curl', 'curl', 'multi-curl', 'mcurl' ],
+35 silly install resolved     homepage: 'http://github.com/jiangmiao/node-curl',
+35 silly install resolved     repository: { type: 'git', url: 'git://github.com/jiangmiao/node-curl.git' },
+35 silly install resolved     main: './lib',
+35 silly install resolved     scripts: { install: 'sh src/generate_curl_options_list.sh && (node-gyp rebuild || node-waf configure build)' },
+35 silly install resolved     engines: { node: '>= 0.6.0' },
+35 silly install resolved     bugs: { url: 'https://github.com/jiangmiao/node-curl/issues' },
+35 silly install resolved     _id: 'node-curl@0.3.3',
+35 silly install resolved     _shasum: '71274370774c2298b860307a9e45877701638735',
+35 silly install resolved     _resolved: 'https://registry.npmjs.org/node-curl/-/node-curl-0.3.3.tgz',
+35 silly install resolved     _from: 'node-curl@*',
+35 silly install resolved     _npmVersion: '1.4.23',
+35 silly install resolved     _npmUser: { name: 'jiangmiao', email: 'jiangfriend@gmail.com' },
+35 silly install resolved     maintainers: [ [Object] ],
+35 silly install resolved     dist:
+35 silly install resolved      { shasum: '71274370774c2298b860307a9e45877701638735',
+35 silly install resolved        tarball: 'http://registry.npmjs.org/node-curl/-/node-curl-0.3.3.tgz' },
+35 silly install resolved     directories: {},
+35 silly install resolved     readme: 'ERROR: No README data found!' } ]
+36 info install node-curl@0.3.3 into c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro
+37 info installOne node-curl@0.3.3
+38 verbose installOne of node-curl to c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro not in flight; installing
+39 verbose lock using C:\Users\karthom\AppData\Roaming\npm-cache\_locks\node-curl-bc5fb2df4d2d1f45.lock for c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+40 silly install write writing node-curl 0.3.3 to c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+41 silly cache addNamed cb node-curl@0.3.3
+42 verbose unbuild node_modules\node-curl
+43 silly gentlyRm c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl is being purged from base c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro
+44 verbose gentlyRm don't care about contents; nuking c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+45 verbose tar unpack C:\Users\karthom\AppData\Roaming\npm-cache\node-curl\0.3.3\package.tgz
+46 verbose tar unpacking to c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+47 silly gentlyRm c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl is being purged
+48 verbose gentlyRm don't care about contents; nuking c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+49 silly gunzTarPerm modes [ '777', '666' ]
+50 silly gunzTarPerm extractEntry package.json
+51 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+52 silly gunzTarPerm extractEntry .npmignore
+53 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+54 silly gunzTarPerm extractEntry README.md
+55 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+56 silly gunzTarPerm extractEntry index.js
+57 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+58 silly gunzTarPerm extractEntry binding.gyp
+59 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 438 ]
+60 silly gunzTarPerm extractEntry examples/curl.js
+61 silly gunzTarPerm modified mode [ 'examples/curl.js', 420, 438 ]
+62 silly gunzTarPerm extractEntry examples/low-level.js
+63 silly gunzTarPerm modified mode [ 'examples/low-level.js', 420, 438 ]
+64 silly gunzTarPerm extractEntry examples/post-multi-part.js
+65 silly gunzTarPerm modified mode [ 'examples/post-multi-part.js', 420, 438 ]
+66 silly gunzTarPerm extractEntry examples/test.js
+67 silly gunzTarPerm modified mode [ 'examples/test.js', 420, 438 ]
+68 silly gunzTarPerm extractEntry examples/low-level-pressure.js
+69 silly gunzTarPerm modified mode [ 'examples/low-level-pressure.js', 420, 438 ]
+70 silly gunzTarPerm extractEntry examples/test-stream.js
+71 silly gunzTarPerm modified mode [ 'examples/test-stream.js', 420, 438 ]
+72 silly gunzTarPerm extractEntry examples/pressure-multi-post.js
+73 silly gunzTarPerm modified mode [ 'examples/pressure-multi-post.js', 420, 438 ]
+74 silly gunzTarPerm extractEntry examples/test-get-info.js
+75 silly gunzTarPerm modified mode [ 'examples/test-get-info.js', 420, 438 ]
+76 silly gunzTarPerm extractEntry examples/test-errors.js
+77 silly gunzTarPerm modified mode [ 'examples/test-errors.js', 420, 438 ]
+78 silly gunzTarPerm extractEntry examples/quick-start.js
+79 silly gunzTarPerm modified mode [ 'examples/quick-start.js', 420, 438 ]
+80 silly gunzTarPerm extractEntry examples/post.js
+81 silly gunzTarPerm modified mode [ 'examples/post.js', 420, 438 ]
+82 silly gunzTarPerm extractEntry examples/pressure.js
+83 silly gunzTarPerm modified mode [ 'examples/pressure.js', 420, 438 ]
+84 silly gunzTarPerm extractEntry examples/pressure.toffee
+85 silly gunzTarPerm modified mode [ 'examples/pressure.toffee', 420, 438 ]
+86 silly gunzTarPerm extractEntry examples/curl.toffee
+87 silly gunzTarPerm modified mode [ 'examples/curl.toffee', 420, 438 ]
+88 silly gunzTarPerm extractEntry examples/test-errors.toffee
+89 silly gunzTarPerm modified mode [ 'examples/test-errors.toffee', 420, 438 ]
+90 silly gunzTarPerm extractEntry examples/pressure-multi-post.toffee
+91 silly gunzTarPerm modified mode [ 'examples/pressure-multi-post.toffee', 420, 438 ]
+92 silly gunzTarPerm extractEntry examples/post.toffee
+93 silly gunzTarPerm modified mode [ 'examples/post.toffee', 420, 438 ]
+94 silly gunzTarPerm extractEntry examples/test-stream.toffee
+95 silly gunzTarPerm modified mode [ 'examples/test-stream.toffee', 420, 438 ]
+96 silly gunzTarPerm extractEntry examples/post-multi-part.toffee
+97 silly gunzTarPerm modified mode [ 'examples/post-multi-part.toffee', 420, 438 ]
+98 silly gunzTarPerm extractEntry examples/test.toffee
+99 silly gunzTarPerm modified mode [ 'examples/test.toffee', 420, 438 ]
+100 silly gunzTarPerm extractEntry .travis.yml
+101 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+102 silly gunzTarPerm extractEntry index.toffee
+103 silly gunzTarPerm modified mode [ 'index.toffee', 420, 438 ]
+104 silly gunzTarPerm extractEntry lib/Curl.js
+105 silly gunzTarPerm modified mode [ 'lib/Curl.js', 420, 438 ]
+106 silly gunzTarPerm extractEntry lib/CurlBuilder.js
+107 silly gunzTarPerm modified mode [ 'lib/CurlBuilder.js', 420, 438 ]
+108 silly gunzTarPerm extractEntry lib/Curl.toffee
+109 silly gunzTarPerm modified mode [ 'lib/Curl.toffee', 420, 438 ]
+110 silly gunzTarPerm extractEntry lib/CurlBuilder.toffee
+111 silly gunzTarPerm modified mode [ 'lib/CurlBuilder.toffee', 420, 438 ]
+112 silly gunzTarPerm extractEntry LICENSE-MIT
+113 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 420, 438 ]
+114 silly gunzTarPerm extractEntry src/generate_curl_options_list.sh
+115 silly gunzTarPerm modified mode [ 'src/generate_curl_options_list.sh', 493, 511 ]
+116 silly gunzTarPerm extractEntry src/node-curl.cc
+117 silly gunzTarPerm modified mode [ 'src/node-curl.cc', 420, 438 ]
+118 silly gunzTarPerm extractEntry src/node-curl.h
+119 silly gunzTarPerm modified mode [ 'src/node-curl.h', 420, 438 ]
+120 silly gunzTarPerm extractEntry wscript
+121 silly gunzTarPerm modified mode [ 'wscript', 420, 438 ]
+122 info preinstall node-curl@0.3.3
+123 silly install resolved []
+124 verbose about to build c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+125 info build c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+126 verbose linkStuff [ false,
+126 verbose linkStuff   false,
+126 verbose linkStuff   false,
+126 verbose linkStuff   'c:\\Users\\karthom\\Desktop\\Repository\\cli-intro\\Node-CLI-Intro\\node_modules' ]
+127 info linkStuff node-curl@0.3.3
+128 verbose linkBins node-curl@0.3.3
+129 verbose linkMans node-curl@0.3.3
+130 verbose rebuildBundles node-curl@0.3.3
+131 info install node-curl@0.3.3
+132 verbose unsafe-perm in lifecycle true
+133 info node-curl@0.3.3 Failed to exec install script
+134 verbose unlock done using C:\Users\karthom\AppData\Roaming\npm-cache\_locks\node-curl-bc5fb2df4d2d1f45.lock for c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+135 verbose stack Error: node-curl@0.3.3 install: `sh src/generate_curl_options_list.sh && (node-gyp rebuild || node-waf configure build)`
+135 verbose stack Exit status 1
+135 verbose stack     at EventEmitter.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+135 verbose stack     at EventEmitter.emit (events.js:110:17)
+135 verbose stack     at ChildProcess.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:14:12)
+135 verbose stack     at ChildProcess.emit (events.js:110:17)
+135 verbose stack     at maybeClose (child_process.js:1015:16)
+135 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+136 verbose pkgid node-curl@0.3.3
+137 verbose cwd c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro
+138 error Windows_NT 6.1.7601
+139 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "node-curl"
+140 error node v0.12.2
+141 error npm  v2.7.4
+142 error code ELIFECYCLE
+143 error node-curl@0.3.3 install: `sh src/generate_curl_options_list.sh && (node-gyp rebuild || node-waf configure build)`
+143 error Exit status 1
+144 error Failed at the node-curl@0.3.3 install script 'sh src/generate_curl_options_list.sh && (node-gyp rebuild || node-waf configure build)'.
+144 error This is most likely a problem with the node-curl package,
+144 error not with npm itself.
+144 error Tell the author that this fails on your system:
+144 error     sh src/generate_curl_options_list.sh && (node-gyp rebuild || node-waf configure build)
+144 error You can get their info via:
+144 error     npm owner ls node-curl
+144 error There is likely additional logging output above.
+145 verbose exit [ 1, true ]
+146 verbose unbuild node_modules\node-curl
+147 info preuninstall node-curl@0.3.3
+148 info uninstall node-curl@0.3.3
+149 verbose unbuild rmStuff node-curl@0.3.3 from c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules
+150 info postuninstall node-curl@0.3.3
+151 silly gentlyRm c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl is being purged from base c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro
+152 verbose gentlyRm don't care about contents; nuking c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+153 silly vacuum-fs purging c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules\node-curl
+154 silly vacuum-fs quitting because other entries in c:\Users\karthom\Desktop\Repository\cli-intro\Node-CLI-Intro\node_modules
