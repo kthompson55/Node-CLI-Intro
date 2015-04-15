@@ -1,8 +1,14 @@
+// project files
 import VersionBumper from "./version-bump.js";
-import Yargs from "Yargs";
 import Package from "../package.json";
+
+// JSON writing
+import Yargs from "Yargs";
 import Promise from "fs-promise";
 import Path from 'path';
+
+// Git pushing
+import ChildPromise from 'child-process-promise';
 
 let bumper = new VersionBumper();
 
@@ -29,6 +35,13 @@ else if(yarguments.argv.version)
 }
 else
 {
+	updateJson();
+	updateGit();
+}
+
+// START JSON HANDLING_
+function updateJson()
+{
 	let preid;
 	if(yarguments.argv.preid)
 	{
@@ -40,7 +53,7 @@ else
 	try{
 		let updateVersion = bumper.versionBump(Package.version,updateType,preid);
 		Package.version = updateVersion;
-		Promise.writeFile(file('../package.json'),JSON.stringify(Package));
+		Promise.writeFile(file('../package.json'),JSON.stringify(Package,null,'  '));
 	}catch(err){
 		console.log("The following error occurred: " + err);
 	}
@@ -51,3 +64,26 @@ function file(){
 	args.unshift('bin');
   	return Path.join.apply(Path, args);
 }
+// _END JSON
+// START GIT_
+function updateGit()
+{
+	let promise = ChildPromise.exec;
+	promise('git add package.json')
+		.then(
+			promise('package.json added')
+				.then(
+					promise('git commit -m "release ' + Package.version + '"')
+					.then(
+						promise('git tag v' + Package.version)
+						.then(
+							promise('git push --tags')
+							)
+						)
+					)
+			)
+		.fail(function(err){
+			console.error("ERROR: ", err);
+		})
+}
+//_END GIT
