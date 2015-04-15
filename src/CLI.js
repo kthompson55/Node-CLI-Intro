@@ -35,8 +35,14 @@ else if(yarguments.argv.version)
 }
 else
 {
-	updateJson();
-	updateGit();
+	if(updateJson())
+	{
+		if(updateGit())
+		{
+			console.log("API Stuff");
+			gitAPI();
+		}
+	}	
 }
 
 // START JSON HANDLING_
@@ -54,8 +60,10 @@ function updateJson()
 		let updateVersion = bumper.versionBump(Package.version,updateType,preid);
 		Package.version = updateVersion;
 		Promise.writeFile(file('../package.json'),JSON.stringify(Package,null,'  '));
+		return true;
 	}catch(err){
 		console.log("The following error occurred: " + err);
+		return false;
 	}
 }
 
@@ -71,19 +79,25 @@ function updateGit()
 	let promise = ChildPromise.exec;
 	promise('git add package.json')
 		.then(
-			promise('package.json added')
+			promise('git commit -m "release ' + Package.version + '"')
+			.then(
+				promise('git tag v' + Package.version)
 				.then(
-					promise('git commit -m "release ' + Package.version + '"')
-					.then(
-						promise('git tag v' + Package.version)
-						.then(
-							promise('git push --tags')
-							)
-						)
-					)
+					promise('git push --tags')
+					.then(function(){
+						return true;
+					})
+				)
 			)
-		.fail(function(err){
-			console.error("ERROR: ", err);
-		})
+		);
+}
+
+function gitAPI()
+{
+	console.log("API Stuff");
+	let promise = ChildPromise.exec;
+	promise('git GET /repos/kthompson55/Node-CLI-Intro/releases/tag/v.1.0.0')
+	.then('echo get received')
+	.fail(function(){console.log('GET repo details failed'); return false;});
 }
 //_END GIT

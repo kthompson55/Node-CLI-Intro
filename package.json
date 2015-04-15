@@ -1,6 +1,6 @@
 {
   "name": "Node-CLI-Intro",
-  "version": "5.0.1",
+  "version": "6.0.0",
   "description": "Test",
   "main": "index.js",
   "scripts": {
