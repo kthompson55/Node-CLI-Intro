@@ -1,15 +1,17 @@
-import {parseArgs} from "../src/argument-parsing.js";
+import ArgumentParser from "../src/argument-parsing.js";
 
-describe('Yargs Arguments\n\t',function(){
+let parser = new ArgumentParser();
+
+describe('Yargs Arguments\t',function(){
 	describe('Yargs Correct Arguments', function(){
 		it('no preid', function(){
 			let args = ['-b', 'major'];
-			let parsed = parseArgs(args);
+			let parsed = parser.parseArgs(args);
 			assert(parsed.bump === 'major');
 		})
 		it('with preid', function(){
 			let args = ['-b', 'major', '-p', 'testCase'];
-			let parsed = parseArgs(args);
+			let parsed = parser.parseArgs(args);
 			assert(parsed.bump === 'major');
 			assert(parsed.preid === 'testCase');
 		})

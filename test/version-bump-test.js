@@ -6,8 +6,8 @@ let test = new VersionBumper();
 let currentVersion = '1.0.0';
 let newVersion = '';
 
-describe("version bumper", function() {
-	describe('version should be higher\n\t', function(){
+describe("Version Bumper\t", function() {
+	describe('version should be higher', function(){
 		it('major release',function(){
 			newVersion = Semver.valid(test.versionBump(currentVersion,"major"));
 			let increasedVersionTest = Semver.gt(newVersion,currentVersion);
