@@ -1,8 +1,8 @@
 {
   "name": "Node-CLI-Intro",
-  "version": "7.0.0",
+  "version": "7.2.0",
   "description": "Test",
-  "main": "release",
+  "main": "index.js",
   "scripts": {
     "test": "mocha",
     "build": "babel src --out-dir lib"
