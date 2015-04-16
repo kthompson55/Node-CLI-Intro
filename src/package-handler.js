@@ -14,7 +14,7 @@ class PackageHandler
 		try{
 			let newVersion = bumper.versionBump(Package.version,updateType,preid);
 			Package.version = newVersion;
-			return Promise.writeFile('../pacakage.json',JSON.stringify(Package,null,'  '));
+			return Promise.writeFile('package.json',JSON.stringify(Package,null,'  '));
 		}catch(err){
 			console.log("FAIL");
 			console.log(`The following error occurred: ${err}`);
